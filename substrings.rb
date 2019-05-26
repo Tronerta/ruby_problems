@@ -7,9 +7,7 @@ def substrings (string, dictionary)
 
 			match = /#{word}/.match(string.downcase)
 
-			if match != nil 
-				substring_hash[match[0]] += 1
-			end
+			substring_hash[match[0]] += 1 if match
 
 		end
 	end
