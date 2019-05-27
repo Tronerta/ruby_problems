@@ -1,22 +1,20 @@
-
 def bubble_sort_by (array)
+	sorted = false
 
-	# Don't know how to do it another way
-	until array == array.sort { |a, b| a.length - b.length }
-
+	while !sorted
+		sorted = true
 		array.each do |e|
-
 			i = array.index(e)
 			next_el = array[i+1]
 
 			if e != array[-1]
-
 				if yield(e, next_el) > 0
 					array[i] = next_el
 					array[i + 1] = e
+					sorted = false
 				end
-
 			end
+
 		end
 
 	end

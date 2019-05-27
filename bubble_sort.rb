@@ -1,7 +1,8 @@
 def bubble_sort (array)
+	sorted = false
 
-	until array == array.sort
-	
+	while !sorted
+		sorted = true
 		array.each do |e|
 			i = array.index(e)
 			next_el = array[i+1]
@@ -10,11 +11,12 @@ def bubble_sort (array)
 				if e > next_el 
 					array[i] = next_el
 					array[i + 1] = e
+					sorted = false
 				end
 			end
 
 		end
-
+		
 	end
 	array
 end
